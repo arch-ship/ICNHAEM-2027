@@ -1,0 +1,55 @@
+-- ICNHAEM-2027 database schema
+-- Import this into the database configured in config.php
+
+CREATE TABLE IF NOT EXISTS abstracts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    temp_id VARCHAR(50) NOT NULL UNIQUE,
+    full_abstract_id VARCHAR(50) DEFAULT NULL,
+    full_name VARCHAR(255) NOT NULL,
+    gender VARCHAR(30) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    mobile VARCHAR(60) NOT NULL,
+    designation VARCHAR(255) DEFAULT NULL,
+    department VARCHAR(255) DEFAULT NULL,
+    institute VARCHAR(255) NOT NULL,
+    address TEXT DEFAULT NULL,
+    country VARCHAR(100) NOT NULL,
+    abstract_title TEXT NOT NULL,
+    abstract_file VARCHAR(255) NOT NULL,
+    comm_author_name VARCHAR(255) DEFAULT NULL,
+    comm_author_email VARCHAR(255) DEFAULT NULL,
+    comm_author_affiliation TEXT DEFAULT NULL,
+    presentation_preference VARCHAR(100) DEFAULT NULL,
+    status ENUM('pending','accepted','rejected') NOT NULL DEFAULT 'pending',
+    agreed TINYINT(1) NOT NULL DEFAULT 0
+) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS registrations (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    reg_temp_id VARCHAR(50) DEFAULT NULL,
+    reg_full_id VARCHAR(50) DEFAULT NULL,
+    full_name VARCHAR(255) NOT NULL,
+    gender VARCHAR(30) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    mobile VARCHAR(60) NOT NULL,
+    designation VARCHAR(255) DEFAULT NULL,
+    department VARCHAR(255) DEFAULT NULL,
+    institute VARCHAR(255) NOT NULL,
+    address TEXT DEFAULT NULL,
+    country VARCHAR(100) NOT NULL,
+    participation_type VARCHAR(50) NOT NULL,
+    themes TEXT DEFAULT NULL,
+    publish_journal VARCHAR(255) DEFAULT NULL,
+    abstract_id VARCHAR(50) DEFAULT NULL,
+    fee_category VARCHAR(100) NOT NULL,
+    fee_paid VARCHAR(50) NOT NULL,
+    currency VARCHAR(10) DEFAULT NULL,
+    payment_date DATE DEFAULT NULL,
+    transaction_id VARCHAR(255) DEFAULT NULL,
+    payment_proof VARCHAR(255) DEFAULT NULL,
+    student_doc VARCHAR(255) DEFAULT NULL,
+    status ENUM('pending','confirmed','rejected') NOT NULL DEFAULT 'pending',
+    agreed TINYINT(1) NOT NULL DEFAULT 0
+) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
