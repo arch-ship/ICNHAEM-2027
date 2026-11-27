@@ -1,0 +1,2 @@
+# Directory listing is disabled in the site-wide .htaccess.
+# The root .htaccess also blocks PHP execution in this directory.
