@@ -235,12 +235,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <header class="site-header">
     <div class="container header-inner">
-        <a href="index.html" class="brand" aria-label="ICNHAEM 2027 home">
-            <img src="images/bhu-logo.png" alt="Banaras Hindu University Logo" class="brand-logo">
-            <span class="brand-text">
-                <span class="brand-title">ICNHAEM <span>2027</span></span>
-                <span class="brand-sub">Banaras Hindu University · Varanasi</span>
-            </span>
+        <a href="index.html" class="brand" aria-label="Banaras Hindu University — ICNHAEM 2027 home">
+            <img src="images/bhu-full-logo.png" alt="Banaras Hindu University Official Logo" class="brand-logo-full">
         </a>
         <nav class="nav" aria-label="Primary navigation">
             <a href="index.html" class="nav-link">Home</a>
@@ -267,7 +263,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <main>
     <section class="page-hero">
         <div class="container">
-            <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Abstract Submission</div>
+            <div class="page-hero-top">
+                <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Abstract Submission</div>
+                <span class="page-conf-tag">ICNHAEM-2027 · 18–20 March 2027</span>
+            </div>
             <h1>Submit an Abstract</h1>
             <p>Share your research at ICNHAEM-2027 — 18–20 March 2027, Banaras Hindu University, Varanasi.</p>
         </div>
@@ -356,13 +355,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="container">
         <div class="footer-grid">
             <div class="footer-brand">
-                <a href="index.html" class="brand">
-                    <img src="images/bhu-logo.png" alt="Banaras Hindu University Logo" class="brand-logo">
-                    <span class="brand-text">
-                        <span class="brand-title">ICNHAEM <span>2027</span></span>
-                        <span class="brand-sub">Banaras Hindu University · Varanasi</span>
-                    </span>
+                <a href="index.html" class="brand" aria-label="Banaras Hindu University">
+                    <img src="images/bhu-full-logo.png" alt="Banaras Hindu University Official Logo" class="brand-logo-full">
                 </a>
+                <div class="footer-conf-name">ICNHAEM <span>2027</span></div>
                 <p>International Conference on Nanomaterials, Hydrogen and Advanced Energy Materials and Devices.</p>
                 <p>18–20 March 2027 · Banaras Hindu University, Varanasi, India</p>
             </div>
