@@ -16,9 +16,6 @@
     }
 
     if (toggle && mobileNav) {
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.setAttribute('aria-label', 'Open menu');
-
         toggle.addEventListener('click', function (e) {
             e.stopPropagation();
             var isOpen = mobileNav.classList.toggle('open');
@@ -26,28 +23,24 @@
             toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
             document.body.classList.toggle('nav-open', isOpen);
         });
-
         mobileNav.querySelectorAll('a').forEach(function (link) {
             link.addEventListener('click', closeMenu);
         });
-
         document.addEventListener('click', function (e) {
             if (mobileNav.classList.contains('open') &&
                 !mobileNav.contains(e.target) && !toggle.contains(e.target)) {
                 closeMenu();
             }
         });
-
         document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape') closeMenu();
         });
-
         window.addEventListener('resize', function () {
             if (window.innerWidth > 900) closeMenu();
         });
     }
 
-    /* ---------- Subtle header shadow on scroll ---------- */
+    /* ---------- Header shadow on scroll ---------- */
     function onScroll() {
         if (header) header.classList.toggle('scrolled', window.scrollY > 8);
     }
@@ -62,8 +55,8 @@
         if (target === current) link.classList.add('active');
     });
 
-    /* ---------- Countdown to the conference ---------- */
-    var targetDate = new Date('2027-03-18T09:00:00').getTime();
+    /* ---------- Countdown to 18 March 2027 ---------- */
+    var targetDate = new Date('2027-03-18T09:00:00+05:30').getTime();
     var ids = ['days', 'hours', 'mins', 'secs'];
     var nodes = {};
     ids.forEach(function (id) { nodes[id] = document.getElementById('count-' + id); });
@@ -73,11 +66,9 @@
     function tick() {
         var distance = targetDate - Date.now();
         if (distance <= 0) {
-            ids.forEach(function (id) {
-                if (nodes[id]) nodes[id].textContent = '00';
-            });
+            ids.forEach(function (id) { if (nodes[id]) nodes[id].textContent = '00'; });
             var label = document.getElementById('count-status');
-            if (label) label.textContent = 'The conference is underway — welcome to ICNHAEM-2027!';
+            if (label) label.textContent = 'ICNHAEM-2027 is now underway at Banaras Hindu University!';
             return;
         }
         var days = Math.floor(distance / 86400000);
@@ -89,13 +80,43 @@
         if (nodes.mins) nodes.mins.textContent = pad(mins);
         if (nodes.secs) nodes.secs.textContent = pad(secs);
     }
-
     if (nodes.days) {
         tick();
         window.setInterval(tick, 1000);
     }
 
-    /* ---------- Reveal on scroll ---------- */
+    /* ---------- Committee tabs & live filter (about.html) ---------- */
+    var tabButtons = document.querySelectorAll('.tab-btn[data-tab]');
+    var panes = document.querySelectorAll('.committee-pane');
+    var searchInput = document.getElementById('committeeSearch');
+
+    function filterCommittee() {
+        if (!searchInput) return;
+        var q = searchInput.value.trim().toLowerCase();
+        panes.forEach(function (pane) {
+            pane.querySelectorAll('li').forEach(function (li) {
+                li.style.display = li.textContent.toLowerCase().indexOf(q) !== -1 ? '' : 'none';
+            });
+        });
+    }
+
+    tabButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var targetId = btn.getAttribute('data-tab');
+            tabButtons.forEach(function (b) { b.classList.remove('active'); });
+            panes.forEach(function (p) { p.classList.remove('active'); });
+            btn.classList.add('active');
+            var activePane = document.getElementById(targetId);
+            if (activePane) activePane.classList.add('active');
+            filterCommittee();
+        });
+    });
+
+    if (searchInput) {
+        searchInput.addEventListener('input', filterCommittee);
+    }
+
+    /* ---------- Scroll reveal ---------- */
     var reveals = document.querySelectorAll('.reveal');
     if (reveals.length) {
         if (!('IntersectionObserver' in window) ||
@@ -109,12 +130,12 @@
                         observer.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+            }, { threshold: 0.06, rootMargin: '0px 0px -30px 0px' });
             reveals.forEach(function (el) { observer.observe(el); });
         }
     }
 
-    /* ---------- Contact form: open the visitor's mail client ---------- */
+    /* ---------- Contact form mailto ---------- */
     var contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function (e) {
@@ -126,13 +147,12 @@
             var subject = String(data.get('subject') || 'General enquiry').trim();
             var message = String(data.get('message') || '').trim();
             var body = 'Name: ' + name + '\nEmail: ' + email + '\n\n' + message;
-            var mailto = 'mailto:info@icnhaem2027.com?subject=' +
+            window.location.href = 'mailto:info@icnhaem2027.com?subject=' +
                 encodeURIComponent('[ICNHAEM-2027] ' + subject) +
                 '&body=' + encodeURIComponent(body);
-            window.location.href = mailto;
             var status = document.getElementById('contactStatus');
             if (status) {
-                status.textContent = 'Your mail app should open now. If it does not, e-mail info@icnhaem2027.com directly.';
+                status.textContent = 'Your e-mail app should open now. If it does not, please write directly to info@icnhaem2027.com.';
                 status.classList.add('show');
             }
         });
