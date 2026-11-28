@@ -279,12 +279,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration | ICNHAEM 2027</title>
-    <meta name="description" content="Register for ICNHAEM-2027, 18–20 March 2027 at Banaras Hindu University, Varanasi. View fees and complete the online registration form.">
+    <title>Registration | ICNHAEM-2027</title>
+    <meta name="description" content="Register for ICNHAEM-2027, 18–20 March 2027 at Banaras Hindu University, Varanasi. View registration fees and complete your online registration.">
     <link rel="canonical" href="https://icnhaem2027.com/registration.php">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&family=Newsreader:ital,opsz,wght@0,6..72,600;0,6..72,700;1,6..72,500&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -292,26 +292,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <header class="site-header">
     <div class="container header-inner">
         <a href="index.html" class="brand" aria-label="ICNHAEM 2027 home">
-            <span class="brand-mark">I<span>27</span></span>
-            <span class="brand-text"><span class="brand-title">ICNHAEM 2027</span><span class="brand-sub">BHU · Varanasi</span></span>
+            <img src="images/bhu-logo.png" alt="Banaras Hindu University Logo" class="brand-logo">
+            <span class="brand-text">
+                <span class="brand-title">ICNHAEM <span>2027</span></span>
+                <span class="brand-sub">Banaras Hindu University · Varanasi</span>
+            </span>
         </a>
         <nav class="nav" aria-label="Primary navigation">
             <a href="index.html" class="nav-link">Home</a>
-            <a href="about.html" class="nav-link">About</a>
+            <a href="about.html" class="nav-link">About &amp; Committee</a>
             <a href="abstract.php" class="nav-link">Abstract</a>
             <a href="registration.php" class="nav-link">Registration</a>
             <a href="contact.html" class="nav-link">Contact</a>
         </nav>
-        <a href="registration.php" class="btn btn-primary btn-small nav-cta">Register now <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span></a>
-        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav"><span class="material-symbols-rounded" aria-hidden="true">menu</span></button>
+        <a href="registration.php" class="btn btn-primary btn-small nav-cta">Register Now <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span></a>
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+            <span class="material-symbols-rounded" aria-hidden="true">menu</span>
+        </button>
     </div>
     <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
         <a href="index.html">Home</a>
-        <a href="about.html">About</a>
+        <a href="about.html">About &amp; Committee</a>
         <a href="abstract.php">Abstract</a>
         <a href="registration.php">Registration</a>
         <a href="contact.html">Contact</a>
-        <a href="registration.php" class="mobile-cta">Register now</a>
+        <a href="registration.php" class="mobile-cta">Register Now</a>
     </nav>
 </header>
 
@@ -319,40 +324,39 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <section class="page-hero">
         <div class="container">
             <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Registration</div>
-            <h1>Registration</h1>
-            <p>Join us at Banaras Hindu University, Varanasi, for three days of research and discussion.</p>
+            <h1>Conference Registration</h1>
+            <p>Join researchers and innovators at Banaras Hindu University, Varanasi, from 18–20 March 2027.</p>
         </div>
     </section>
 
     <section class="section" id="fees">
         <div class="container">
-
             <div class="section-head reveal">
-                <span class="eyebrow">Participation</span>
-                <h2 class="section-title">Registration fees</h2>
-                <p class="section-lead">As per the conference brochure. Details for international participants will be announced separately.</p>
+                <span class="eyebrow">Registration Amount</span>
+                <h2 class="section-title">Registration Fees</h2>
+                <p class="section-lead">Official registration amounts as listed in the ICNHAEM-2027 conference brochure.</p>
             </div>
 
             <div class="table-wrap reveal">
                 <table>
-                    <thead><tr><th>Category</th><th>Fee (INR)</th><th>Details</th></tr></thead>
+                    <thead><tr><th>Category</th><th>Registration Amount</th><th>Notes</th></tr></thead>
                     <tbody>
-                        <tr><td><strong>Faculty</strong></td><td>&#8377;5,000</td><td>Teaching and research faculty</td></tr>
-                        <tr><td><strong>Post Doctoral Fellow</strong></td><td>&#8377;3,000</td><td>With a valid post-doc position</td></tr>
-                        <tr><td><strong>PhD Student</strong></td><td>&#8377;2,500</td><td>Valid student proof required</td></tr>
+                        <tr><td><strong>Faculty</strong></td><td class="fee-amount">Rs. 5,000/-</td><td>Faculty members &amp; scientists</td></tr>
+                        <tr><td><strong>Post Doc.</strong></td><td class="fee-amount">Rs. 3,000/-</td><td>Post-doctoral researchers</td></tr>
+                        <tr><td><strong>PhD Students</strong></td><td class="fee-amount">Rs. 2,500/-</td><td>Valid student ID / proof required</td></tr>
                     </tbody>
                 </table>
             </div>
 
             <div class="notice notice-info mt-2 reveal">
                 <span class="material-symbols-rounded" aria-hidden="true">info</span>
-                <span>Registration includes access to all technical sessions, conference material and refreshments. Payment details and deadlines will be confirmed by the organising committee.</span>
+                <span>Payment link and bank transfer details will be updated here once finalized by the organizing committee. Keep your payment receipt ready before filling the form below.</span>
             </div>
 
             <div class="form-card mt-2 reveal">
-                <span class="eyebrow">Online form</span>
-                <h2 class="panel-title">Complete your registration</h2>
-                <p style="font-size:.9rem; color:var(--ink-soft); margin-bottom:24px;">Fields marked <span class="req">*</span> are mandatory. Have your payment receipt and abstract ID (if any) ready.</p>
+                <span class="eyebrow">Online Registration Form</span>
+                <h2 class="panel-title">Complete Your Registration</h2>
+                <p style="font-size:.9rem; margin-bottom:22px;">Fields marked <span class="req">*</span> are mandatory.</p>
 
                 <form id="registrationForm" action="registration.php" method="POST" enctype="multipart/form-data" novalidate>
                     <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($csrfToken, ENT_QUOTES, 'UTF-8'); ?>">
@@ -361,35 +365,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div class="alert alert-error" id="formErrors" role="alert"><h4>Please review the following</h4><ul id="errorList"></ul></div>
                     <div class="alert alert-success" id="formSuccess" role="status">
                         <h4>Registration received</h4>
-                        <p>Your temporary registration ID is <strong id="successRegId"></strong>. Please keep it for future correspondence — a confirmation has been sent to your e-mail.</p>
+                        <p>Your temporary Registration ID is <strong id="successRegId"></strong>. Please keep it for future correspondence — a confirmation has been sent to your e-mail.</p>
                     </div>
 
                     <div class="form-section">
-                        <h3 class="form-section-title"><span class="material-symbols-rounded" aria-hidden="true">person</span> Participant details</h3>
+                        <h3 class="form-section-title"><span class="material-symbols-rounded" aria-hidden="true">person</span> Participant Details</h3>
                         <div class="form-grid">
                             <div class="field full"><label for="full_name">Full name <span class="req">*</span></label><input id="full_name" name="full_name" type="text" required placeholder="Full name"></div>
                             <div class="field"><label for="gender">Gender <span class="req">*</span></label><select id="gender" name="gender" required><option value="">Select</option><option>Male</option><option>Female</option><option>Other</option><option>Prefer not to say</option></select></div>
                             <div class="field"><label for="email">E-mail address <span class="req">*</span></label><input id="email" name="email" type="email" required placeholder="you@university.edu"></div>
                             <div class="field"><label for="mobile">Mobile number <span class="req">*</span></label><input id="mobile" name="mobile" type="tel" required placeholder="+91-XXXXXXXXXX"></div>
                             <div class="field"><label for="country">Country <span class="req">*</span></label><input id="country" name="country" type="text" required placeholder="India"></div>
-                            <div class="field"><label for="designation">Designation</label><input id="designation" name="designation" type="text" placeholder="Professor, Research Scholar, …"></div>
-                            <div class="field"><label for="department">Department</label><input id="department" name="department" type="text" placeholder="Physics, Chemistry, …"></div>
+                            <div class="field"><label for="designation">Designation</label><input id="designation" name="designation" type="text" placeholder="Professor, Research Scholar, ..."></div>
+                            <div class="field"><label for="department">Department</label><input id="department" name="department" type="text" placeholder="Physics, Chemistry, ..."></div>
                             <div class="field full"><label for="institute">Institute / university / organisation <span class="req">*</span></label><input id="institute" name="institute" type="text" required placeholder="Full name of your institution"></div>
                             <div class="field full"><label for="address">Postal address</label><textarea id="address" name="address" placeholder="Street, city, state, postal code"></textarea></div>
                         </div>
                     </div>
 
                     <div class="form-section">
-                        <h3 class="form-section-title"><span class="material-symbols-rounded" aria-hidden="true">badge</span> Participation &amp; publication</h3>
+                        <h3 class="form-section-title"><span class="material-symbols-rounded" aria-hidden="true">badge</span> Participation &amp; Thematic Tracks</h3>
                         <div class="form-grid">
                             <div class="field"><label for="participation_type">Participation type <span class="req">*</span></label><select id="participation_type" name="participation_type" required><option value="">Select</option><option>Oral presenter</option><option>Poster presenter</option><option>Attendee only</option></select></div>
                             <div class="field"><label for="publish_journal">Publication option <span class="req">*</span></label><select id="publish_journal" name="publish_journal" required><option value="">Select</option><option>Publication in an indexed journal</option><option>Registration without publication</option></select></div>
-                            <div class="field full"><label for="abstract_id">Abstract ID <span class="req">*</span></label><input id="abstract_id" name="abstract_id" type="text" placeholder="e.g. ICNHAEM-ABS-0001"><span class="field-hint" id="lookupResult">Required if you chose a publication option. e.g. ICNHAEM-ABS-0001</span></div>
+                            <div class="field full"><label for="abstract_id">Abstract ID</label><input id="abstract_id" name="abstract_id" type="text" placeholder="e.g. ICNHAEM-ABS-0001"><span class="field-hint" id="lookupResult">Required if you chose a publication option.</span></div>
                             <div class="field full">
-                                <span class="field-label">Thematic areas of interest</span>
+                                <span class="field-label">Thematic Areas of Interest</span>
                                 <div class="checkbox-group">
                                     <label class="checkbox-field"><input type="checkbox" name="themes[]" value="Nanomaterials for Energy and Functional Applications"> Nanomaterials for Energy and Functional Applications</label>
-                                    <label class="checkbox-field"><input type="checkbox" name="themes[]" value="Hydrogen Generation, Storage and Utilisation"> Hydrogen Generation, Storage and Utilisation</label>
+                                    <label class="checkbox-field"><input type="checkbox" name="themes[]" value="Hydrogen Generation, Storage and Utilization"> Hydrogen Generation, Storage and Utilization</label>
                                     <label class="checkbox-field"><input type="checkbox" name="themes[]" value="Advanced Energy Materials and Storage Devices"> Advanced Energy Materials and Storage Devices</label>
                                     <label class="checkbox-field"><input type="checkbox" name="themes[]" value="Emerging and Sustainable Energy Technologies"> Emerging and Sustainable Energy Technologies</label>
                                 </div>
@@ -398,28 +402,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </div>
 
                     <div class="form-section">
-                        <h3 class="form-section-title"><span class="material-symbols-rounded" aria-hidden="true">payments</span> Fee &amp; payment</h3>
+                        <h3 class="form-section-title"><span class="material-symbols-rounded" aria-hidden="true">payments</span> Fee &amp; Payment Proof</h3>
                         <div class="form-grid">
-                            <div class="field"><label for="fee_category">Registration category <span class="req">*</span></label><select id="fee_category" name="fee_category" required onchange="document.getElementById('studentDocField').style.display=this.value.indexOf('PhD')!==-1?'flex':'none'"><option value="">Select</option><option>Faculty — &#8377;5,000</option><option>Post Doc — &#8377;3,000</option><option>PhD Student — &#8377;2,500</option></select></div>
+                            <div class="field"><label for="fee_category">Registration category <span class="req">*</span></label><select id="fee_category" name="fee_category" required><option value="">Select</option><option>Faculty — Rs. 5,000</option><option>Post Doc. — Rs. 3,000</option><option>PhD Students — Rs. 2,500</option></select></div>
                             <div class="field"><label for="fee_paid">Fee paid <span class="req">*</span></label><input id="fee_paid" name="fee_paid" type="number" min="1" step="1" required placeholder="e.g. 5000"></div>
                             <div class="field"><label for="currency">Currency</label><select id="currency" name="currency"><option>INR</option><option>USD</option></select></div>
                             <div class="field"><label for="payment_date">Date of payment <span class="req">*</span></label><input id="payment_date" name="payment_date" type="date" required></div>
-                            <div class="field"><label for="transaction_id">Payment transaction ID <span class="req">*</span></label><input id="transaction_id" name="transaction_id" type="text" required placeholder="Receipt / UPI / reference number"></div>
+                            <div class="field"><label for="transaction_id">Payment transaction ID <span class="req">*</span></label><input id="transaction_id" name="transaction_id" type="text" required placeholder="Receipt / UPI / UTR reference"></div>
                             <div class="field"><label for="payment_proof">Payment proof (JPG / PNG / PDF) <span class="req">*</span></label><input id="payment_proof" name="payment_proof" type="file" accept=".jpg,.jpeg,.png,.pdf,image/jpeg,image/png,application/pdf" required><span class="field-hint">Maximum file size: 10 MB</span></div>
-                            <div class="field" id="studentDocField" style="display:none;"><label for="student_doc">Student proof (JPG / PNG / PDF) <span class="req">*</span></label><input id="student_doc" name="student_doc" type="file" accept=".jpg,.jpeg,.png,.pdf,image/jpeg,image/png,application/pdf"><span class="field-hint">Required for PhD student registration</span></div>
+                            <div class="field" id="studentDocField" style="display:none;"><label for="student_doc">Student proof (JPG / PNG / PDF) <span class="req">*</span></label><input id="student_doc" name="student_doc" type="file" accept=".jpg,.jpeg,.png,.pdf,image/jpeg,image/png,application/pdf"><span class="field-hint">Required for PhD Students registration</span></div>
                         </div>
                     </div>
 
                     <div class="form-section">
                         <label class="checkbox-field"><input type="checkbox" name="agreed" value="1" required><span>I confirm the details above are correct and agree to the registration terms of ICNHAEM-2027. <span class="req">*</span></span></label>
                         <div class="form-footer">
-                            <button type="submit" class="btn btn-primary">Complete registration <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span></button>
-                            <span class="form-footer-note">You will receive a registration ID by e-mail.</span>
+                            <button type="submit" class="btn btn-primary">Complete Registration <span class="material-symbols-rounded" aria-hidden="true">arrow_forward</span></button>
+                            <span class="form-footer-note">You will receive a temporary Registration ID by e-mail.</span>
                         </div>
                     </div>
                 </form>
             </div>
-
         </div>
     </section>
 </main>
@@ -428,15 +431,46 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="container">
         <div class="footer-grid">
             <div class="footer-brand">
-                <a href="index.html" class="brand"><span class="brand-mark">I<span>27</span></span><span class="brand-text"><span class="brand-title">ICNHAEM 2027</span><span class="brand-sub">BHU · Varanasi</span></span></a>
+                <a href="index.html" class="brand">
+                    <img src="images/bhu-logo.png" alt="Banaras Hindu University Logo" class="brand-logo">
+                    <span class="brand-text">
+                        <span class="brand-title">ICNHAEM <span>2027</span></span>
+                        <span class="brand-sub">Banaras Hindu University · Varanasi</span>
+                    </span>
+                </a>
                 <p>International Conference on Nanomaterials, Hydrogen and Advanced Energy Materials and Devices.</p>
                 <p>18–20 March 2027 · Banaras Hindu University, Varanasi, India</p>
             </div>
-            <div><h4>Explore</h4><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="abstract.php">Abstract submission</a></li><li><a href="registration.php">Registration</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-            <div><h4>Conference</h4><ul class="footer-links"><li><a href="about.html#themes">Thematic areas</a></li><li><a href="about.html#committee">Committee</a></li><li><a href="about.html#dedication">Dedication</a></li><li><a href="registration.php#fees">Registration fees</a></li></ul></div>
-            <div><h4>Get in touch</h4><div class="footer-line"><span class="material-symbols-rounded" aria-hidden="true">mail</span><a href="mailto:info@icnhaem2027.com">info@icnhaem2027.com</a></div><div class="footer-line"><span class="material-symbols-rounded" aria-hidden="true">location_on</span><span>Banaras Hindu University<br>Varanasi, Uttar Pradesh, India</span></div><div class="footer-line"><span class="material-symbols-rounded" aria-hidden="true">language</span><a href="https://icnhaem2027.com">icnhaem2027.com</a></div></div>
+            <div>
+                <h4>Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About &amp; Committee</a></li>
+                    <li><a href="abstract.php">Abstract Submission</a></li>
+                    <li><a href="registration.php">Registration</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Conference</h4>
+                <ul class="footer-links">
+                    <li><a href="about.html#themes">Thematic Areas</a></li>
+                    <li><a href="about.html#committee">Organizing &amp; Advisory</a></li>
+                    <li><a href="about.html#dedication">Prof. O. N. Srivastava</a></li>
+                    <li><a href="registration.php#fees">Registration Fees</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Get in Touch</h4>
+                <div class="footer-line"><span class="material-symbols-rounded" aria-hidden="true">mail</span><a href="mailto:info@icnhaem2027.com">info@icnhaem2027.com</a></div>
+                <div class="footer-line"><span class="material-symbols-rounded" aria-hidden="true">location_on</span><span>Banaras Hindu University<br>Varanasi, Uttar Pradesh, India</span></div>
+                <div class="footer-line"><span class="material-symbols-rounded" aria-hidden="true">language</span><a href="https://icnhaem2027.com">icnhaem2027.com</a></div>
+            </div>
         </div>
-        <div class="footer-bottom"><p>&copy; 2027 ICNHAEM. All rights reserved.</p><p>Organised by the students of Prof. O. N. Srivastava &amp; Onkar Nath Educational Society</p></div>
+        <div class="footer-bottom">
+            <p>&copy; 2027 ICNHAEM-2027. All rights reserved.</p>
+            <p>Organised by Students of Prof. O. N. Srivastava &amp; Onkar Nath Educational Society, Varanasi, India</p>
+        </div>
     </div>
 </footer>
 
