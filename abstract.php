@@ -233,18 +233,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
 
-<div class="top-strip">
-    <div class="container top-strip-inner">
-        <span><span class="gold-dot"></span>18–20 March 2027 · Banaras Hindu University, Varanasi, India</span>
-        <span>Dedicated to Padma Shri Prof. O. N. Srivastava &nbsp;|&nbsp; <a href="registration.php#fees">View Fees</a></span>
-    </div>
-</div>
-
 <header class="site-header">
     <div class="container header-inner">
         <a href="index.html" class="brand" aria-label="ICNHAEM 2027 home">
-            <span class="brand-title">ICNHAEM <span>2027</span></span>
-            <span class="brand-sub">Banaras Hindu University · Varanasi</span>
+            <img src="images/bhu-logo.png" alt="Banaras Hindu University Logo" class="brand-logo">
+            <span class="brand-text">
+                <span class="brand-title">ICNHAEM <span>2027</span></span>
+                <span class="brand-sub">Banaras Hindu University · Varanasi</span>
+            </span>
         </a>
         <nav class="nav" aria-label="Primary navigation">
             <a href="index.html" class="nav-link">Home</a>
@@ -361,8 +357,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="footer-grid">
             <div class="footer-brand">
                 <a href="index.html" class="brand">
-                    <span class="brand-title">ICNHAEM <span>2027</span></span>
-                    <span class="brand-sub">Banaras Hindu University · Varanasi</span>
+                    <img src="images/bhu-logo.png" alt="Banaras Hindu University Logo" class="brand-logo">
+                    <span class="brand-text">
+                        <span class="brand-title">ICNHAEM <span>2027</span></span>
+                        <span class="brand-sub">Banaras Hindu University · Varanasi</span>
+                    </span>
                 </a>
                 <p>International Conference on Nanomaterials, Hydrogen and Advanced Energy Materials and Devices.</p>
                 <p>18–20 March 2027 · Banaras Hindu University, Varanasi, India</p>
